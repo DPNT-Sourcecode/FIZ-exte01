@@ -43,20 +43,29 @@ public class FizzBuzzSolution {
     public String fizzBuzz(Integer number) {
         boolean containsThree = contains(3,number);
         boolean containsFive = contains(5, number);
-
-        if (deluxe(number)) {
-            return "deluxe";
-        } else if ( (number%3 == 0 || containsThree) &&
+        boolean deluxeNumber = deluxe(number) ;
+ 
+        if ( (number%3 == 0 || containsThree) &&
             (number%5 == 0 || containsFive) ) {
-            if (deluxe(number)) {
+            if (deluxeNumber == true) {
                 return "fizz buzz deluxe";
             } else {
                 return "fizz buzz";
             }
         } else if (number%3 == 0 || containsThree) {
-            return "fizz";
+            if (deluxeNumber == true) {
+                return "fizz deluxe";
+            } else {
+                return "fizz";
+            }
         } else if (number%5 == 0 || containsFive) {
-            return "buzz";
+            if (deluxeNumber == true) {
+                return "buzz deluxe";
+            } else {
+                return "buzz";
+            }
+        } else if (deluxeNumber == true) {
+            return "deluxe";
         } else {
             return number + "";
         }
