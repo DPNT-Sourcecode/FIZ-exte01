@@ -59,19 +59,25 @@ public class FizzBuzzSolution {
                 return "fizz buzz";
             }
         } else if (number%3 == 0 || containsThree) {
-            if (deluxeNumber == true) {
+            if (deluxeNumber == 0) {
                 return "fizz deluxe";
+            } else if (deluxeNumber == 1) {
+                return "fizz fake deluxe";
             } else {
                 return "fizz";
             }
         } else if (number%5 == 0 || containsFive) {
-            if (deluxeNumber == true) {
+            if (deluxeNumber == 0) {
                 return "buzz deluxe";
+            } else if (deluxeNumber == 1) {
+                return "buzz fake deluxe";
             } else {
                 return "buzz";
             }
-        } else if (deluxeNumber == true) {
+        } else if (deluxeNumber == 0) {
             return "deluxe";
+        } else if (deluxeNumber == 1) {
+            return "fake deluxe";
         } else {
             return number + "";
         }
