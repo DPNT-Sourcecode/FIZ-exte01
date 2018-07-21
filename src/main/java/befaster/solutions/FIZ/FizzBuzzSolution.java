@@ -43,7 +43,10 @@ public class FizzBuzzSolution {
     public String fizzBuzz(Integer number) {
         boolean containsThree = contains(3,number);
         boolean containsFive = contains(5, number);
-        if ( (number%3 == 0 || containsThree) &&
+
+        if (deluxe(number)) {
+            return "deluxe";
+        } else if ( (number%3 == 0 || containsThree) &&
             (number%5 == 0 || containsFive) ) {
             if (deluxe(number)) {
                 return "fizz buzz deluxe";
