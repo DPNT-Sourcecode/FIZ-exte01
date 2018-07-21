@@ -4,30 +4,30 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class FizzBuzzSolution {
 
-    public int countOccurences(String num, char c) {
+    // public int countOccurences(String num, char c) {
 
-        int count = 0;
-        for (int i = 0; i < num.length(); i++) {
-            if (num.charAt(i) == c) {
-                count++;
-            } 
-        }
-        return count;
-    }
+    //     int count = 0;
+    //     for (int i = 0; i < num.length(); i++) {
+    //         if (num.charAt(i) == c) {
+    //             count++;
+    //         } 
+    //     }
+    //     return count;
+    // }
 
     public int deluxe(int number) {
 
         if (number > 10) {
 
             String num = number + "";
-            int occurences = countOccurences(num, num.charAt(0));
-            if (occurences == num.length() ) {
+            //int occurences = countOccurences(num, num.charAt(0));
+            // if (occurences == num.length() ) {
                 if (number%2 == 0) {
                     return 0;
                 } else {
                     return 1;
                 }
-            }
+           // }
         }
         return -1;
     }
@@ -49,8 +49,8 @@ public class FizzBuzzSolution {
         boolean containsFive = contains(5, number);
         int deluxeNumber = deluxe(number) ;
  
-        if ( (number%3 == 0 || containsThree) &&
-            (number%5 == 0 || containsFive) ) {
+        if ( (number%3 == 0 && containsThree) &&
+            (number%5 == 0 && containsFive) ) {
             if (deluxeNumber == 0) {
                 return "fizz buzz deluxe";
             } else if (deluxeNumber == 1) {
@@ -58,7 +58,7 @@ public class FizzBuzzSolution {
             } else {
                 return "fizz buzz";
             }
-        } else if (number%3 == 0 || containsThree) {
+        } else if (number%3 == 0 && containsThree) {
             if (deluxeNumber == 0) {
                 return "fizz deluxe";
             } else if (deluxeNumber == 1) {
@@ -66,7 +66,7 @@ public class FizzBuzzSolution {
             } else {
                 return "fizz";
             }
-        } else if (number%5 == 0 || containsFive) {
+        } else if (number%5 == 0 && containsFive) {
             if (deluxeNumber == 0) {
                 return "buzz deluxe";
             } else if (deluxeNumber == 1) {
