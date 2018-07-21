@@ -15,22 +15,22 @@ public class FizzBuzzSolution {
         return count;
     }
 
-    public int deluxe(int number) {
+    // public int deluxe(int number) {
 
-        if (number > 10) {
+    //     if (number > 10) {
 
-            String num = number + "";
-            int occurences = countOccurences(num, num.charAt(0));
-             if (occurences == num.length() ) {
-                if (number%2 == 0) {
-                    return 0;
-                } else {
-                    return 1;
-                }
-            }
-        }
-        return -1;
-    }
+    //         String num = number + "";
+    //         int occurences = countOccurences(num, num.charAt(0));
+    //          if (occurences == num.length() ) {
+    //             if (number%2 == 0) {
+    //                 return 0;
+    //             } else {
+    //                 return 1;
+    //             }
+    //         }
+    //     }
+    //     return -1;
+    // }
 
     public boolean contains(int c, int number) {
         
@@ -49,19 +49,19 @@ public class FizzBuzzSolution {
         boolean containsFive = contains(5, number);
         boolean checkDeluxeThree = (number%3 == 0) && containsThree;
         boolean checkDeluxeFive = (number%5 == 0) && containsFive;
-        int deluxeNumber = deluxe(number) ;
+       // int deluxeNumber = deluxe(number) ;
  
         if ( (number%3 == 0 || containsThree) &&
             (number%5 == 0 || containsFive) ) {
-            if (deluxeNumber == 0) {
+            if (checkDeluxeThree && checkDeluxeFive && number%2 == 0) {
                 return "fizz buzz deluxe";
-            } else if (deluxeNumber == 1) {
+            } else if (checkDeluxeThree && checkDeluxeFive && number%2 != 0) {
                 return "fizz buzz fake deluxe";
             } else {
                 return "fizz buzz";
             }
         } else if (number%3 == 0 || containsThree) {
-            if (checkDeluxe) {
+            if (checkDeluxeThree) {
                 if (number%2 == 0) {
                     return "fizz deluxe";
                 } else {
@@ -71,7 +71,7 @@ public class FizzBuzzSolution {
                 return "fizz";
             }
         } else if (number%5 == 0 || containsFive) {
-            if (checkDeluxe) {
+            if (checkDeluxeFive) {
                 if (number%2 == 0) {
                     return "buzz deluxe";
                 } else {
@@ -80,10 +80,10 @@ public class FizzBuzzSolution {
             } else {
                 return "buzz";
             }
-        } else if (deluxeNumber == 0) {
-            return "deluxe";
-        } else if (deluxeNumber == 1) {
-            return "fake deluxe";
+        // } else if (deluxeNumber == 0) {
+        //     return "deluxe";
+        // } else if (deluxeNumber == 1) {
+        //     return "fake deluxe";
         } else {
             return number + "";
         }
