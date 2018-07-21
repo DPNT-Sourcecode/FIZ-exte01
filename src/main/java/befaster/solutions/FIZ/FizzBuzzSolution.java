@@ -15,17 +15,21 @@ public class FizzBuzzSolution {
         return count;
     }
 
-    public boolean deluxe(int number) {
+    public int deluxe(int number) {
 
         if (number > 10) {
 
             String num = number + "";
             int occurences = countOccurences(num, num.charAt(0));
             if (occurences == num.length() ) {
-                return true;
+                if (number%2 == 0) {
+                    return 1;
+                } else {
+                    return 0;
+                }
             }
         }
-        return false;
+        return -1;
     }
 
     public boolean contains(int c, int number) {
@@ -43,12 +47,14 @@ public class FizzBuzzSolution {
     public String fizzBuzz(Integer number) {
         boolean containsThree = contains(3,number);
         boolean containsFive = contains(5, number);
-        boolean deluxeNumber = deluxe(number) ;
+        int deluxeNumber = deluxe(number) ;
  
         if ( (number%3 == 0 || containsThree) &&
             (number%5 == 0 || containsFive) ) {
-            if (deluxeNumber == true) {
+            if (deluxeNumber == 0) {
                 return "fizz buzz deluxe";
+            } else if (deluxeNumber == 1) {
+                return "fizz buzz fake deluxe";
             } else {
                 return "fizz buzz";
             }
