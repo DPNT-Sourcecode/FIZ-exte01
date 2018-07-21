@@ -1,16 +1,26 @@
 package befaster.solutions.FIZ;
 
 import befaster.runner.SolutionNotImplementedException;
-import StringUtils;
 
 public class FizzBuzzSolution {
+
+    public int countOccurences(String num, char c) {
+
+        int count = 0;
+        for (int i = 0; i < num.length(); i++) {
+            if (num.charAt(i) == c) {
+                count++;
+            } 
+        }
+        return count;
+    }
 
     public boolean deluxe(int number) {
 
         if (number > 10) {
 
             String num = number + "";
-            int occurences = StringUtils.countOccurencesOf(num, num.charAt(0));
+            int occurences = countOccurences(num, num.charAt(0));
             if (occurences == num.length() ) {
                 return true;
             }
