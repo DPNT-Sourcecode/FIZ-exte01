@@ -19,8 +19,8 @@ public class FizzBuzzSolution {
     public String fizzBuzz(Integer number) {
         boolean containsThree = contains(3,number);
         boolean containsFive = contains(5, number);
-        if ( (number%3 == 0 && number%5 == 0) || 
-            (containsThree && containsFive) ) {
+        if ( (number%3 == 0 || containsThree) &&
+            (number%5 == 0 || containsFive) ) {
             return "fizz buzz";
         } else if (number%3 == 0 || containsThree) {
             return "fizz";
