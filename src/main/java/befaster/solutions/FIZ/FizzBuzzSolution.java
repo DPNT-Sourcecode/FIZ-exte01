@@ -47,10 +47,12 @@ public class FizzBuzzSolution {
     public String fizzBuzz(Integer number) {
         boolean containsThree = contains(3,number);
         boolean containsFive = contains(5, number);
+        boolean checkDeluxeThree = (number%3 == 0) && containsThree;
+        boolean checkDeluxeFive = (number%5 == 0) && containsFive;
         int deluxeNumber = deluxe(number) ;
  
-        if ( (number%3 == 0 && containsThree) &&
-            (number%5 == 0 && containsFive) ) {
+        if ( (number%3 == 0 || containsThree) &&
+            (number%5 == 0 || containsFive) ) {
             if (deluxeNumber == 0) {
                 return "fizz buzz deluxe";
             } else if (deluxeNumber == 1) {
@@ -58,19 +60,23 @@ public class FizzBuzzSolution {
             } else {
                 return "fizz buzz";
             }
-        } else if (number%3 == 0 && containsThree) {
-            if (deluxeNumber == 0) {
-                return "fizz deluxe";
-            } else if (deluxeNumber == 1) {
-                return "fizz fake deluxe";
+        } else if (number%3 == 0 || containsThree) {
+            if (checkDeluxe) {
+                if (number%2 == 0) {
+                    return "fizz deluxe";
+                } else {
+                    return "fizz fake deluxe";
+                }
             } else {
                 return "fizz";
             }
-        } else if (number%5 == 0 && containsFive) {
-            if (deluxeNumber == 0) {
-                return "buzz deluxe";
-            } else if (deluxeNumber == 1) {
-                return "buzz fake deluxe";
+        } else if (number%5 == 0 || containsFive) {
+            if (checkDeluxe) {
+                if (number%2 == 0) {
+                    return "buzz deluxe";
+                } else {
+                    return "buzz fake deluxe";
+                }
             } else {
                 return "buzz";
             }
