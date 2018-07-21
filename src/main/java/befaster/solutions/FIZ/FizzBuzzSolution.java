@@ -1,8 +1,22 @@
 package befaster.solutions.FIZ;
 
 import befaster.runner.SolutionNotImplementedException;
+import StringUtils;
 
 public class FizzBuzzSolution {
+
+    public boolean deluxe(int number) {
+
+        if (number > 10) {
+
+            String num = number + "";
+            int occurences = StringUtils.countOccurencesOf(num, num.charAt(0));
+            if (occurences == num.length() ) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public boolean contains(int c, int number) {
         
@@ -21,7 +35,11 @@ public class FizzBuzzSolution {
         boolean containsFive = contains(5, number);
         if ( (number%3 == 0 || containsThree) &&
             (number%5 == 0 || containsFive) ) {
-            return "fizz buzz";
+            if (deluxe(number)) {
+                return "fizz buzz deluxe";
+            } else {
+                return "fizz buzz";
+            }
         } else if (number%3 == 0 || containsThree) {
             return "fizz";
         } else if (number%5 == 0 || containsFive) {
