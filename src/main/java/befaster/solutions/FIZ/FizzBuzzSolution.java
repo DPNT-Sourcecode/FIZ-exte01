@@ -6,7 +6,7 @@ public class FizzBuzzSolution {
 
     public boolean contains(int c, int number) {
         
-        while (number) {
+        while (number != 0) {
             int a = number%10;
             if (a == c) {
                 return true;
