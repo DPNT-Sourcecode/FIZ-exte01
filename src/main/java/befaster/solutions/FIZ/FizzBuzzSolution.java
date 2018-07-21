@@ -23,9 +23,9 @@ public class FizzBuzzSolution {
             int occurences = countOccurences(num, num.charAt(0));
             if (occurences == num.length() ) {
                 if (number%2 == 0) {
-                    return 1;
-                } else {
                     return 0;
+                } else {
+                    return 1;
                 }
             }
         }
