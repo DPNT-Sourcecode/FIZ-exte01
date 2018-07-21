@@ -53,7 +53,13 @@ public class FizzBuzzSolution {
  
         if ( (number%3 == 0 || containsThree) &&
             (number%5 == 0 || containsFive) ) {
+            if (checkDeluxeThree && checkDeluxeFive && number%2 == 0) {
+                return "fizz buzz deluxe";
+            } else if (checkDeluxeThree && checkDeluxeFive && number%2 != 0) {
+                return "fizz buzz fake deluxe";
+            } else {
                 return "fizz buzz";
+            }
         } else if (number%3 == 0 || containsThree) {
             if (checkDeluxeThree) {
                 if (number%2 == 0) {
